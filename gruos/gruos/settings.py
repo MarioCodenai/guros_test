@@ -25,7 +25,9 @@ BASE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'adn'
 ]
+
 THIRD_APPS =[
     'corsheaders',
     'rest_framework',

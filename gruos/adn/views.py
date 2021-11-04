@@ -20,9 +20,12 @@ class DnaView(APIView):
     def post(self,request,format=None):
         
         data = request.data
-        result = has_mutation(data['dna'])
-        print(result)
+        try:
+            result = has_mutation(data['dna'])
+        except Exception as e:
+            return Response({"message" : "DNA object is not sent"},status=status.HTTP_400_BAD_REQUEST)
+        
         if result:
-            return Response({"message" : "This dna has a mutation"},status=status.HTTP_200_OK)
-        return Response({"message" : "This dna no a mutation"},status=status.HTTP_403_FORBIDDEN)
+            return Response({"message" : "DNA has a mutation"},status=status.HTTP_200_OK)
+        return Response({"message" : "DNA has no mutation"},status=status.HTTP_403_FORBIDDEN)
         
