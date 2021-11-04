@@ -6,7 +6,7 @@ su secuencia de ADN"
 
 ### Pre-requisitos 📋
 
-_Tener instalado Python, Conda y PostgreSQL_
+_Tener instalado Python y Conda_
 
 
 ### Instalación 🔧
@@ -15,21 +15,19 @@ _Tener instalado Python, Conda y PostgreSQL_
 2.	Se debe de crear un entorno virtual de conda dentro de la carpeta del repo, de sugerencia se debe de llamar guros esto se hace con el siguiente comando en Windows ```conda create -n guros Python ```
 3.	Creado el entorno virtual se debe de inicializar con ```conda activate guros```
 4.	Teniendo el entrono virtual activado en la carpeta de el repositorio se debe de usar el comando ```pip install -r requeriments.txt```
-5.	Al tener instalados los requerimientos se debe de crear un archivo ```.env``` y añadir las siguientes variables con sus valores adaptados para el desarrollo local.
-    ```DEBUG='True'
-    DB_NAME='ToolderLocal'
-    DB_USER='postgres'
-    DB_PASSWORD='root'
-    DB_PORT='5432'
-    ALLOWED_HOST='127.0.0.1' ```
-6.	Teniendo el entrono virtual en la carpeta de el proyecto se debe de hacer los siguientes comandos de django ```pyhton manage.py makemigrations, python manage.py migrate``` para crear las tablas de la base de datos
-7.	Debes de crear tu usuario superuser con el comando ```python manage.py createsuperuser``` para generar tu usuario admin del sistema local
+5.	Teniendo el entrono virtual en la carpeta de el proyecto se debe de hacer los siguientes comandos de django ```pyhton manage.py makemigrations, python manage.py migrate``` para crear las tablas de la base de datos
+6.	Debes de crear tu usuario superuser con el comando ```python manage.py createsuperuser``` para generar tu usuario admin del sistema local
+7. Al tener el usuario el siguiente paso es correr el comand ```python manage.py runserver``` para arrancar el servidor en localhost:3000
+8. Para revisar las rutas definidas sobre el test serián _GET http://localhost:8000/dna/stats_ y _POST http://localhost:8000/dna/mutation_
+9. El objeto que se debe de mandar en el post debe de tener la siguiente estructura: ```{
+    "dna":["AATAAT", "CAGGGC", "TAGTGT", "TGGGTG", "CGCCTA","TCACTG" ]
+}``` en caso contrario marcara error el sistema
+10. Para la petición GET solo es acceder a la ruta
 
 
 ## Construido con 🛠️
 
 * [Django](https://www.djangoproject.com/) - El framework web de python usado
-* [PostgreSQL](https://www.postgresql.org/) - Gestor de bases de datos SQL
 
 ## Expresiones de Gratitud 🎁
 
