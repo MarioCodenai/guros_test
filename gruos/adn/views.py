@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
@@ -17,7 +18,11 @@ def has_mutation(dna):
 class DnaView(APIView):
     
     def post(self,request,format=None):
-        data = request.data
-        print(data)
         
-        return Response(status=status.HTTP_200_OK)
+        data = request.data
+        result = has_mutation(data['dna'])
+        print(result)
+        if result:
+            return Response({"message" : "This dna has a mutation"},status=status.HTTP_200_OK)
+        return Response({"message" : "This dna no a mutation"},status=status.HTTP_403_FORBIDDEN)
+        

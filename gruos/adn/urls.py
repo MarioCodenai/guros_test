@@ -6,5 +6,5 @@ from rest_framework.routers import DefaultRouter
 from .views import DnaView
 
 urlpatterns = [
-    path('/mutation',DnaView.as_view(),name='dna_mutation'),
+    path('mutation',DnaView.as_view(),name='dna_mutation'),
     ]
