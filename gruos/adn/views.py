@@ -11,12 +11,56 @@ from .models import DnaRegistration
 
 def has_mutation(dna):
     
+    vertical_dna_1 = []
+    vertical_dna_2 = []
+    vertical_dna_3 = []
+    vertical_dna_4 = []
+    vertical_dna_5 = []
+    vertical_dna_6 = []
+    
     for i in dna:
+        
+        counter = 0
         mutation = re.findall(r'(.)\1{3}', i)
         if mutation:
-            return True
+            return print(True)
             
-    return False
+        for j in i:
+            counter+=1
+            if counter == 1:
+                vertical_dna_1.append(j)
+            elif counter == 2:
+                vertical_dna_2.append(j)
+            elif counter == 3:
+                vertical_dna_3.append(j)
+            elif counter == 4:
+                vertical_dna_4.append(j)
+            elif counter == 5:
+                vertical_dna_5.append(j)
+            elif counter == 6:
+                vertical_dna_6.append(j)
+                
+            
+    mutation_vertical_1 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_1:
+        return print(True)
+    mutation_vertical_2 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_2:
+        return print(True)
+    mutation_vertical_3 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_3:
+        return print(True)
+    mutation_vertical_4 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_4:
+        return print(True)
+    mutation_vertical_5 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_5:
+        return print(True)
+    mutation_vertical_6 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
+    if mutation_vertical_6:
+        return print(True)
+
+    return print(False)
 
 class DnaView(APIView):
     
