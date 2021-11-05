@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.gcloudignore
+app.yaml
+Django-website.pem
+GoogleCloudSDKInstaller.exe
+cloud_sql_proxy_x64.exe
+guros.pem
