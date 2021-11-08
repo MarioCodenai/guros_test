@@ -60,7 +60,7 @@ def has_mutation(dna):
     if mutation_vertical_6:
         return True
 
-    return print(False)
+    return False
 
 class DnaView(APIView):
     
