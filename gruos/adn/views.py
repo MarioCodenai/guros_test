@@ -23,7 +23,7 @@ def has_mutation(dna):
         counter = 0
         mutation = re.findall(r'(.)\1{3}', i)
         if mutation:
-            return print(True)
+            return True
             
         for j in i:
             counter+=1
@@ -43,22 +43,22 @@ def has_mutation(dna):
             
     mutation_vertical_1 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_1:
-        return print(True)
+        return True
     mutation_vertical_2 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_2:
-        return print(True)
+        return True
     mutation_vertical_3 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_3:
-        return print(True)
+        return True
     mutation_vertical_4 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_4:
-        return print(True)
+        return True
     mutation_vertical_5 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_5:
-        return print(True)
+        return True
     mutation_vertical_6 = re.findall(r'(.)\1{3}', (''.join(vertical_dna_1))) 
     if mutation_vertical_6:
-        return print(True)
+        return True
 
     return print(False)
 
